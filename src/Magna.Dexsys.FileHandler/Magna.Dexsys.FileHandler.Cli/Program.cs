@@ -27,7 +27,7 @@ public class Program
         Stopwatch stopwatch = Stopwatch.StartNew();
 
         FileSearchService searchService = new();
-        searchService.LocateFilesContainingContent(fileLocation, searchValue);
+        searchService.LocateFilesContainingSearchValue(fileLocation, searchValue);
         
         foreach (FileDetails item in searchService.FilesLocated)
         {
