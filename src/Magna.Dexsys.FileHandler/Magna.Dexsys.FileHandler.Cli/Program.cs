@@ -14,7 +14,7 @@ public class Program
         int testCount = 0;
         int testLimit = 10;
 
-        for (; testCount >= testLimit; testCount++)
+        for (; testCount < testLimit; testCount++)
         {
             Test(searchValue);
         }
