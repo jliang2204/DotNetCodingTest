@@ -20,10 +20,10 @@ public class FileSearchService
     /// file.
     /// </summary>
     /// <param name="directory">Directory containing files to search</param>
-    /// <param name="partialContent">Data to search for in files</param>
+    /// <param name="searchValue">Data to search for in files</param>
     /// <returns>Return the number of files located</returns>
     /// <exception cref="NotImplementedException"></exception>
-    public int LocateFilesContainingContent(string directory, string partialContent)
+    public int LocateFilesContainingSearchValue(string directory, string searchValue)
     {
         throw new NotImplementedException();
     }

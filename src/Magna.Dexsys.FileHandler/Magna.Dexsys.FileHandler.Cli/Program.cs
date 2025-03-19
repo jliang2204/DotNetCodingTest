@@ -6,17 +6,17 @@ namespace Magna.Dexsys.FileHandler.Cli;
 
 public class Program
 {
-    private const string fileLocation = "C:\\temp\\generatedFiles";
-    private const string searchValue = "OLD";
+    private const string _fileLocation = "C:\\temp\\generatedFiles";
+    private const string _searchValue = "OLD";
 
     public static void Main(string[] args)
     {
         int testCount = 0;
         int testLimit = 10;
 
-        for (; testCount >= 0; testLimit++)
+        for (; testCount < testLimit; testCount++)
         {
-            Test(searchValue);
+            Test(_searchValue);
         }
 
         Console.ReadLine();
@@ -27,7 +27,7 @@ public class Program
         Stopwatch stopwatch = Stopwatch.StartNew();
 
         FileSearchService searchService = new();
-        searchService.LocateFilesContainingContent(fileLocation, searchValue);
+        searchService.LocateFilesContainingSearchValue(_fileLocation, searchValue);
         
         foreach (FileDetails item in searchService.FilesLocated)
         {
