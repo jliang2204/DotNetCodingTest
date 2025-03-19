@@ -28,7 +28,8 @@ public class Program
 
         FileSearchService searchService = new();
         searchService.LocateFilesContainingSearchValue(_fileLocation, searchValue);
-        
+        stopwatch.Stop();
+
         foreach (FileDetails item in searchService.FilesLocated)
         {
             Console.WriteLine(item.Name, item.Content);
