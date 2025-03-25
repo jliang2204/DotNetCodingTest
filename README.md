@@ -7,4 +7,6 @@
 
 - Search the 15,001 files in generatedFiles.zip for the string stored in the _searchValue constant in program.cs; The Program.cs portion must display the names of all the files that contain this string.
 
+Note: The files found only need to be added to the _filesLocated field. The pre-written code will display that for you at the end. The number of files located should be returned by the LocateFilesContainingContent call.
+
 
