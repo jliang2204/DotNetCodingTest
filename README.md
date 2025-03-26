@@ -11,7 +11,9 @@ Note: The files found only need to be added to the _filesLocated field. The pre-
 
 
 ## Turning the Assignment In
-
+### Option A:
 - Clone the code in this repository, and create your own personal repository to host the results.
 - Once completed, email the link to your repository if it's public, or send an invite to collaborate on the repo if it's private
-- Worst case, or if you do not wish to create a personal repository, email the solution as a zip file (with the ".zip" extension removed from the filename).
+
+### Option B:
+- If you do not wish to create a personal repository, email the solution as a zip file (with the ".zip" extension removed from the filename).
