@@ -10,3 +10,7 @@
 Note: The files found only need to be added to the _filesLocated field. The pre-written code will display that for you at the end. The number of files located should be returned by the LocateFilesContainingContent call.
 
 
+## Turning the Assignment In
+
+Create a fork of this repository and push your changes to that repo. You can either share the link to that repo, or create a pull request against this repository.
+
