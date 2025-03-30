@@ -8,7 +8,6 @@ public class Program
 {
     private const string _fileLocation = "C:\\temp\\generatedFiles";
     private const string _searchValue = "OLD";
-
     public static void Main(string[] args)
     {
         int testCount = 0;
@@ -18,7 +17,7 @@ public class Program
         {
             Test(_searchValue);
         }
-
+ 
         Console.ReadLine();
     }
 
