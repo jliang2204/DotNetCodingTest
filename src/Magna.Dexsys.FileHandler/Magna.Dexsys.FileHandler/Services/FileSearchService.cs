@@ -31,7 +31,7 @@ public class FileSearchService {
             Parallel.ForEach(Directory.EnumerateFiles(directory), (filePath) => { 
                 string content = File.ReadAllText(filePath);
                 if(content.Contains(searchValue)) {
-                    lock (localFilesLocated) {
+                    lock(localFilesLocated) {
                         localFilesLocated.Add(new FileDetails(filePath, Path.GetFileName(filePath), content.Length, content));
                     }
                 }
