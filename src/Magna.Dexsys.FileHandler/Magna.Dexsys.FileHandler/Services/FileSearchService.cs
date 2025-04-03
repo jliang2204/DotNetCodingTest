@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Enumeration;
 using System.Linq;
+using System.Net.Mime;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,19 +25,25 @@ public class FileSearchService {
     /// <returns>Return the number of files located</returns>
     /// <exception cref="NotImplementedException"></exception>
     public int LocateFilesContainingSearchValue(string directory, string searchValue) {
+        _filesLocated.Clear();
+        List<FileDetails> localFilesLocated = [];
         try {
-            foreach(string filePath in Directory.EnumerateFiles(directory)) {
-                string fileName = Path.GetFileName(filePath);
-
-                if(fileName.Contains(searchValue, StringComparison.OrdinalIgnoreCase)) {
-                    string fileContent = File.ReadAllText(filePath);
-
-                    _filesLocated.Add(new FileDetails(filePath, fileName, fileContent.Length, fileContent));
+            Parallel.ForEach(Directory.EnumerateFiles(directory), (filePath) => { 
+                string content = File.ReadAllText(filePath);
+                if(content.Contains(searchValue)) {
+                    lock (localFilesLocated) {
+                        localFilesLocated.Add(new FileDetails(filePath, Path.GetFileName(filePath), content.Length, content));
+                    }
                 }
-            }
+              });
+              
+              lock(_filesLocated) {
+                _filesLocated.AddRange(localFilesLocated);
+              }
+
             
         } catch(Exception e) {
-            throw new NotImplementedException("Error", e);
+            throw new IOException("Error", e);
         }
 
         return _filesLocated.Count;

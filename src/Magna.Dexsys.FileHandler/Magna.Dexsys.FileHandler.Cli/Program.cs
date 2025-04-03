@@ -6,7 +6,7 @@ namespace Magna.Dexsys.FileHandler.Cli;
 
 public class Program
 {
-    private const string _fileLocation = "C:\\temp\\generatedFiles";
+    private const string _fileLocation = "C:\\Users\\jcdli\\Desktop\\UPITT\\internships\\MagnaCodingChallenge\\DotnetCodingTest\\assets\\generatedFiles\\generatedFiles";
     private const string _searchValue = "OLD";
     public static void Main(string[] args)
     {
@@ -17,7 +17,6 @@ public class Program
         {
             Test(_searchValue);
         }
- 
         Console.ReadLine();
     }
 
